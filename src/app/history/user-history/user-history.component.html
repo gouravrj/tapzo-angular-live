@@ -1,0 +1,38 @@
+<app-nav></app-nav>
+<!-- <br>
+<div *ngFor="let data of historyData">
+  Bike name:- {{data.bikename}} <br>
+  Bike Booked for {{data.days}} Days <br>
+  Total Cost :- {{data.totalcost}} <br>
+  Date :- {{data.date}} <br>
+  Bike Lender name:-  {{data.lendername}} <br>
+  Bike Lender Phone:- {{data.lenderphone}} <br>
+  Bike Ride Completed:- {{data.iscompleted}}
+  <hr>
+</div> -->
+
+<!-- <h1>In COnsole all The details are There Just Extract Those and show them in this HtmL Page</h1> -->
+
+<div class="img" *ngFor="let data of historyData">
+  <br>
+  <mat-card class="example-card">
+    <mat-card-header class="header">
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{data.bikename}}</mat-card-title>
+      <mat-card-subtitle>{{data.lendername}} / {{data.lenderphone}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="data.bikeimg" alt="Photo of Bike">
+    <mat-card-content class="body">
+      <h5>{{data.bikedesc}}</h5>
+      <h6>Date :- {{data.date}} <br></h6>
+      <b><p *ngIf="data.iscompleted">Bike Ride Completed</p></b>
+      <b><p *ngIf="!data.iscompleted">Bike Ride Ongoing</p></b>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button>Total Cost :- {{data.totalcost}}  [Per day:- {{data.bikeprice}}] </button> &nbsp;
+      <button mat-raised-button>Bike Booked for {{data.days}} Days</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
